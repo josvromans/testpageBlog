@@ -1,0 +1,275 @@
+
+body {
+    font-size: 28px;
+}
+code {
+    font-size: 0.5em;
+}
+#canvas {
+    max-width: 1150px;
+    margin: 10px auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: white;
+    opacity: 0.965;
+    min-height: 850px;
+}
+h3.no-margin-bottom {
+    margin-bottom: 0px;
+}
+
+code pre {
+    height: 326px;
+    overflow: auto;
+    border:solid gray;
+    border-width: .1em .1em .1em .1em;
+    padding:.2em .6em;
+}
+
+
+.left-block {
+    float: left;
+    display:inline-block;
+    width: 50%;
+}
+
+.right-block {
+    float: right;
+    display:inline-block;
+    width: 50%;
+}
+
+div .end {
+    height: 20px;
+}
+
+.display-image {
+    margin-top: 3.5em;
+    margin-bottom: 3.5em;
+}
+
+.display-image img {
+    display: inherit;
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+}
+.image-caption {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+
+#container {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#canvas_subdivision {
+    width: 60%;
+}
+
+.button_common {
+  border: none;
+  color: white;
+  padding: 0.3em 0.3em;
+  text-align: center;
+  color: black;
+  font-size: 0.63em;
+  margin: 0.15em 0.08em;
+  cursor: pointer;
+}
+.buy_button {
+  transition-duration: 0.4s;
+}
+.buy_button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.art_button:hover {
+  background-color: #4480f4;
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
+  #canvas {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 750px) {
+  #canvas {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .left-block {
+    display: block;
+    width: 100%;
+  }
+  .right-block {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .menu > .item {
+    width: calc(100% / 4.3);
+  }
+  canvas {width: 95%;}
+  #buy_info {width: 95%;}
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+  .code-example {
+    height: auto;
+  }
+  code pre {
+    height: auto;
+  }
+  #canvas {
+    min-height: 600px;
+  }
+  .menu > .item {
+    width: calc(100% / 4.3);
+  }
+}
+
+@media screen and (max-width: 450px) {
+    img.insta {
+        width:100%;
+        max-width:420px;
+    }
+    .art_button {
+        display: none;
+    }
+}
+
+
+
+
+code {font-size:0.62em;}
+.container {
+    max-width: 500px; /* Set max width */
+    width: 100%; /* Allow full width up to the max */
+    padding: 20px; /* Optional padding */
+    background-color: white; /* Background color for visibility */
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.color-input {
+    width: 100%; /* Full width */
+}
+
+.rgb-inputs {
+    display: flex;
+    justify-content: space-between; /* Equally spaced items */
+    margin-top: 10px; /* Space between rows */
+}
+
+.item {
+    display: flex;
+    align-items: center; /* Center vertically */
+    flex: 1; /* Allow equal spacing */
+    justify-content: center; /* Center the items */
+    font-size: 1.1em;
+}
+
+.item input {
+    font-size: 0.7em;
+    margin-left: 5px; /* Space between letter and input */
+}
+
+
+.button-container {
+    display: flex; /* Use flexbox for layout */
+    width: 100%; /* Full width */
+}
+
+button {
+    flex: 1; /* Equal width for each button */
+    padding: 10px; /* Optional padding for button */
+    margin: 5px; /* Optional space between buttons */
+    background-color: #ccc; /* Button color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Optional rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+select {
+    width: 97%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.6em;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+select:hover {
+    border-color: #888;
+}
+
+div.blog-item {
+  margin-top: 3em;
+}
+
+h2.blog-item__title {
+  margin-bottom: 0px;
+}
+h5.blog-item__date {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-align: right;
+  font-style: italic;
+  color: grey;
+}
+
+p.blog-item__short-description {
+  margin-top: 0px;
+  margin-bottom: 0.3em;
+}
+
+.python_reserved {color: red;}
+.python_numeric {color: blue;}
+.python_method {color: purple;}
+.python_comment {color: grey; font-style: italics;}
+
+.tooltip_dotted {
+  border-bottom: 2px dotted gray;
+  text-decoration: none;
+}
+
+#variation_table {
+  max-width: 600px;
+  width: 100%;
+  text-align: right;
+  font-size: 20px;
+}
+
+#variation_table td {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 450px) {
+    #variation_table {
+      font-size: 16px;
+    }
+    #variation_table td {
+      font-size: 16px;
+    }
+}
