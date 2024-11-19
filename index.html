@@ -13,177 +13,170 @@
 
 <h2>Test Page</h2>
   
-<div>
-    <div class="left-block">
-        <img src="attraction.png" alt="Jos Vromans | Artwork" style="width: 98%;">
-        <small><i>Left image caption</i></small>
-    </div>
-
-    <div class="right-block">
-        <img src="attraction.png" alt="Jos Vromans | Artwork" style="width: 98%;">
-        <small><i>Caption for right image</i></small>
-    </div>
-</div>
-
-<p>
-All content of this webpage within the body is inside a div with the id "canvas"... This is how I initially set up my website, it means that especially on a wide screen, the content is scaled in the center with a max width, and large white margins on left and right. Ideally I would not like to change this div with the canvas id (as it applies to every page on my website),  unless you can convince me that it would be better to do so. (I do regret calling it canvas, it was before I used the html canvas element to make JavaScript art)
-</p>
-
-
-<div>
-    <div class="left-block">
-        <img src="layers.png" alt="Jos Vromans | Artwork" style="width: 98%;">
-        <small><i>Layers on the left</i></small>
-    </div>
-
-    <div class="right-block">
-        <img src="layers.png" alt="Jos Vromans | Artwork" style="width: 98%;">
-        <small><i>Triangle Subdivisions on the right</i></small>
-    </div>
-</div>
-
-
-
-<p>
-The first three non-text sections on this page are what I call "panels with two images". I use them to put two images next to eachother, and when making the page width smaller, like on mobile, there will be a point where they go under each other instead of next to eachother. I think this works well, but you are welcome to suggest improvements.
-</p>
-
-<div>
-    <div class="left-block">
-        <img src="triangle_subdivisions.png" alt="Jos Vromans | Artwork" style="width: 98%;">
-        <small><i>Triangle Subdivisions (left)</i></small>
-    </div>
-
-    <div class="right-block">
-        <img src="triangle_subdivisions.png" alt="Jos Vromans | Artwork" style="width: 98%;">
-        <small><i>Triangle Subdivisions (right)</i></small>
-    </div>
-</div>
-
-<p>
-The reason why they have the same image twice on this example page, is because of lazyness. Usually they will be two different images of course. I put them here in 3 different aspect ratios (landscape, portrait and square). They do not have to work with different aspect ratios, whenever I use them on my website, I will make sure to use two images with the same dimensions.
-These section need a margin on the bottom, so that the captions have some whitespace underneath, before any next section starts. Other than that, I think it works well, and might not need changes. I included this, as the items below will behave similar. Maybe they can be styled in exactly the same way? Or maybe the other items have to behave a bit differently.
-</p>
-
-
-
-<h2>Task 1: style this specific section</h2>
-<p>
-    Below are dropdowns, I think they can stay next to eachother, even on mobile.
-    No need to swith to their own row that takes the entire width.
-    The currently use that left/right block approach. Which should be changed to not change by the media query when on mobile.
-</p><p>
-    The buttons also can stay next to eachother, which they do already.
-    They represent 8 bits, the powers of two. And you can click on any of them to modify the image below.
-</p>
-<div>
-    <input type="file" accept="image/png" id="fileInput" hidden=true>
-</div>
-<div>
-    <div class="left-block">
-      <select id="bitflipoptions" onChange="setHalfOfTheTime();">
-        <option value="half-time">Flip bits half of the time</option>
-        <option value="every-bit">Flip every bit</option>
-      </select>
-        
-    </div>
-
-    <div class="right-block">
-        <select id="bitflipchannels" onchange="setChannelsToFlip();">
-            <option value="all">Apply to all channels</option>
-            <option value="R">Apply to R channel only</option>
-            <option value="G">Apply to G channel only</option>
-            <option value="B">Apply to B channel only</option>
-        </select>
-    </div>
- 
-</div>
-
-<div class="button-container">
-    <button id="btnBit7" onclick='clickBit(7)'>2<sup>7</sup></button>
-    <button id="btnBit6" onclick='clickBit(6)'>2<sup>6</sup></button>
-    <button id="btnBit5" onclick='clickBit(5)'>2<sup>5</sup></button>
-    <button id="btnBit4" onclick='clickBit(4)'>2<sup>4</sup></button>
-    <button id="btnBit3" onclick='clickBit(3)'>2<sup>3</sup></button>
-    <button id="btnBit2" onclick='clickBit(2)'>2<sup>2</sup></button>
-    <button id="btnBit1" onclick='clickBit(1)'>2<sup>1</sup></button>
-    <button id="btnBit0" onclick='clickBit(0)'>2<sup>0</sup></button>
-</div>
-
-
-
-
-<div style="display:flex; width:100%; height:400px; background:white;">
-    <canvas style="flex:1; height:100%;" id="canvas1" ondblclick="fileInput.click()" title="Double click to upload your own image"></canvas>
-    <canvas style="flex:1; height:100%; background:white;" id="canvas2"></canvas>
-</div>
-
-<small><i>The original image (double click to load your own image)</i></small>
-        <small><i>The manipulated image</i></small>
-
-
-
-<p>
-    The two images, input & output, should behave like the two panel. On mobile they can switch to be displayed under eachother.
-    Difference is, that upon page load, the right image is empty, it only will be generated when clicking one of the buttons above.
-    Another difference is that the left image can be changed to any image: user upload by double click. So in that case it can have any aspect ratio.
-    
-</p>
-
-
-
-
-
-<div>
-    <input type="file" accept="image/png" id="fileInput2" hidden=true>
-</div>
-<div style="display:flex; width:100%; height:400px; background:white;">
-    <canvas style="flex:1; height:100%;"  id="canvas3" ondblclick="fileInput2.click()" title="Double click to upload your own image"></canvas>
-    <textarea id='textarea1' style="flex:1; height:100%;"></textarea>
-</div>
-
-<div style="margin-top:14px;">
-    <div class="left-block">  
-        <small><i>The original Image (double click to upload your own)</i></small>
-    </div>
-
-    <div class="right-block">
-        <small><button onclick="readImageAndUpdateTextarea('canvas3')">Click to extract text from the image on the left</button></small>
-    </div>
-</div>
-
-
-<p>
-Aliquam accumsan arcu id nunc maximus euismod. Sed eget erat neque. Mauris sed massa vel nibh finibus maximus in nec arcu. Phasellus eget magna et mauris egestas faucibus a id nisi. Curabitur sagittis nibh id sodales facilisis. Aliquam imperdiet ornare molestie. Proin consequat est non purus vulputate, et eleifend eros fringilla. Etiam et sem in orci posuere ullamcorper id mattis velit. In sodales fermentum lobortis.
-</p>
-
-
-<h2>Task 3: Regular two panel?</h2>
-
-
-<div>
-    <div class="left-block">
-        <div style="display:flex; width:100%; height:400px; background:white;">
-        <textarea id='textarea2' style="flex:1; height:100%;">SOME CODE can go here, this could be a very long text that is larger than the visible area</textarea>    
-
+<section>
+    <div class="two-panel">
+        <div class="panel">
+            <img src="attraction.png" alt="Jos Vromans | Artwork" >
+            <small><i>Left image caption</i></small>
         </div>
-    
         
-        <small><i>The input (code)</i></small>
+        <div class="panel">
+            <img src="attraction.png" alt="Jos Vromans | Artwork" >
+            <small><i>Caption for right image</i></small>
+        </div>
+    </div>
+    
+    <p>
+        All content of this webpage within the body is inside a div with the id "canvas"... This is how I initially set up my website, it means that especially on a wide screen, the content is scaled in the center with a max width, and large white margins on left and right. Ideally I would not like to change this div with the canvas id (as it applies to every page on my website),  unless you can convince me that it would be better to do so. (I do regret calling it canvas, it was before I used the html canvas element to make JavaScript art)
+    </p>
+</section>
 
+<section>
+    <div class="two-panel">
+        <div class="panel">
+            <img src="layers.png" alt="Jos Vromans | Artwork" >
+            <small><i>Layers on the left</i></small>
+        </div>
+        
+        <div class="panel">
+            <img src="layers.png" alt="Jos Vromans | Artwork" >
+            <small><i>Triangle Subdivisions on the right</i></small>
+        </div>
+    </div>
+    
+    <p>
+        The first three non-text sections on this page are what I call "panels with two images". I use them to put two images next to eachother, and when making the page width smaller, like on mobile, there will be a point where they go under each other instead of next to eachother. I think this works well, but you are welcome to suggest improvements.
+    </p>
+</section>
+
+<section>
+    <div class="two-panel">
+        <div class="panel">
+            <img src="triangle_subdivisions.png" alt="Jos Vromans | Artwork" >
+            <small><i>Triangle Subdivisions (left)</i></small>
+        </div>
+        
+        <div class="panel">
+            <img src="triangle_subdivisions.png" alt="Jos Vromans | Artwork" >
+            <small><i>Triangle Subdivisions (right)</i></small>
+        </div>
+    </div>
+    
+    <p>
+        The reason why they have the same image twice on this example page, is because of lazyness. Usually they will be two different images of course. I put them here in 3 different aspect ratios (landscape, portrait and square). They do not have to work with different aspect ratios, whenever I use them on my website, I will make sure to use two images with the same dimensions.
+        These section need a margin on the bottom, so that the captions have some whitespace underneath, before any next section starts. Other than that, I think it works well, and might not need changes. I included this, as the items below will behave similar. Maybe they can be styled in exactly the same way? Or maybe the other items have to behave a bit differently.
+    </p>
+</section>
+
+
+<section id="bit-flipper">
+    <h2>Task 1: style this specific section</h2>
+    <p>
+        Below are dropdowns, I think they can stay next to eachother, even on mobile.
+        No need to swith to their own row that takes the entire width.
+        The currently use that left/right block approach. Which should be changed to not change by the media query when on mobile.
+    </p><p>
+        The buttons also can stay next to eachother, which they do already.
+        They represent 8 bits, the powers of two. And you can click on any of them to modify the image below.
+    </p>
+    <div>
+        <input type="file" accept="image/png" id="fileInput" hidden=true>
     </div>
 
-    <div class="right-block">
-        <img src="attraction.png" alt="Jos Vromans | Artwork" style="width: 98%;">
-        <small><i>The output (image)</i></small>
+    <div class="two-panel-row">
+        <div class="panel">
+            <select id="bitflipoptions" onChange="setHalfOfTheTime();">
+                <option value="half-time">Flip bits half of the time</option>
+                <option value="every-bit">Flip every bit</option>
+            </select>
+        </div>
+        
+        <div class="panel">
+            <select id="bitflipchannels" onchange="setChannelsToFlip();">
+                <option value="all">Apply to all channels</option>
+                <option value="R">Apply to R channel only</option>
+                <option value="G">Apply to G channel only</option>
+                <option value="B">Apply to B channel only</option>
+            </select>
+        </div>
+        
     </div>
-</div>
+    <div class="button-container">
+        <button id="btnBit7" onclick='clickBit(7)'>2<sup>7</sup></button>
+        <button id="btnBit6" onclick='clickBit(6)'>2<sup>6</sup></button>
+        <button id="btnBit5" onclick='clickBit(5)'>2<sup>5</sup></button>
+        <button id="btnBit4" onclick='clickBit(4)'>2<sup>4</sup></button>
+        <button id="btnBit3" onclick='clickBit(3)'>2<sup>3</sup></button>
+        <button id="btnBit2" onclick='clickBit(2)'>2<sup>2</sup></button>
+        <button id="btnBit1" onclick='clickBit(1)'>2<sup>1</sup></button>
+        <button id="btnBit0" onclick='clickBit(0)'>2<sup>0</sup></button>
+    </div>
+    
+    <div id="bit-flipper-content" class="two-panel">
+        <div class="panel"> 
+            <canvas id="canvas1" ondblclick="fileInput.click()" title="Double click to upload your own image"></canvas>
+            <small><i>The original image (double click to load your own image)</i></small>
+        </div>
+        <div class="panel">
+            <canvas id="canvas2"></canvas>
+            <small><i>The manipulated image</i></small>
+        </div>
+    </div>
+    
+    <p>
+        The two images, input & output, should behave like the two panel. On mobile they can switch to be displayed under eachother.
+        Difference is, that upon page load, the right image is empty, it only will be generated when clicking one of the buttons above.
+        Another difference is that the left image can be changed to any image: user upload by double click. So in that case it can have any aspect ratio.
+        
+    </p>
+</section>
 
-<p>
-In the section above, there will be a textarea and an image. The text area can have the same height as the image, so they fit nicely next to eachother. So that the text of a next paragraph will always start below this section.
-Note that there is nothing interactive going on here, this will hold predefined code, and a pre defined image.
-</p>
 
+
+
+<section>
+    <div>
+        <input type="file" accept="image/png" id="fileInput2" hidden=true>
+    </div>
+    <div class="two-panel" >
+        <div class="panel">
+            <canvas id="canvas3" ondblclick="fileInput2.click()" title="Double click to upload your own image"></canvas>
+            <small><i>The original Image (double click to upload your own)</i></small>
+        </div>
+        
+        <div class="panel">
+            <textarea  id='textarea1' ></textarea>
+            <button onclick="readImageAndUpdateTextarea('canvas3')">Click to extract text from the image on the left</button>
+        </div>
+    </div>
+    
+    <p>
+        Aliquam accumsan arcu id nunc maximus euismod. Sed eget erat neque. Mauris sed massa vel nibh finibus maximus in nec arcu. Phasellus eget magna et mauris egestas faucibus a id nisi. Curabitur sagittis nibh id sodales facilisis. Aliquam imperdiet ornare molestie. Proin consequat est non purus vulputate, et eleifend eros fringilla. Etiam et sem in orci posuere ullamcorper id mattis velit. In sodales fermentum lobortis.
+    </p>
+    
+</section>
+<section>
+    <h2>Task 3: Regular two panel?</h2>
+    <div class="two-panel">
+
+        <div class="panel">
+            <textarea id='textarea2' >SOME CODE can go here, this could be a very long text that is larger than the visible area</textarea>    
+            <small><i>The input (code)</i></small>
+        </div>
+        
+        <div class="panel">
+            <img src="attraction.png" alt="Jos Vromans | Artwork" >
+            <small><i>The output (image)</i></small>
+        </div>
+
+    </div>
+    
+    <p>
+        In the section above, there will be a textarea and an image. The text area can have the same height as the image, so they fit nicely next to eachother. So that the text of a next paragraph will always start below this section.
+        Note that there is nothing interactive going on here, this will hold predefined code, and a pre defined image.
+    </p>
+</section>
+    
 
 <h4>Task 4: to be discussed</h4>
 <p>
